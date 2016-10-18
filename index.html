@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Psychic Game!</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+<center><img id = psychic src="images/psychic.gif"></center>
+<h1>The Psychic Game!</h1>
+<div id = starter>
+	<p>Guess what letter I'm thinking of...</p>
+</div>
+
+<script type="text/javascript">
+	
+	var letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+
+	var wins = 0;
+	var losses = 0;
+	var guessLeft = 9;
+	var guessSoFar = 0;
+
+	document.onkeyup = function() {
+		var x = String.fromCharCode(event.keyCode).toLowerCase();
+
+		console.log(x);
+
+		var theLetter = letters[Math.floor(Math.random()*letters.length)];
+
+		console.log(theLetter);
+
+		for (var i = 0; i < x.length; i++){
+			if(x === theLetter){
+				wins++; guessLeft = 0;
+			} else {
+				losses++; guessLeft = guessLeft -1; guessSoFar++;
+			}
+
+		var html = "<p>Guess what letter I'm thinking of...</p>" + 
+		"<p>Wins: " + wins + "</p>" +
+		"<p>Losses: " + losses + "</p>" +
+		"<p>Guesses Left: " + guessLeft + "<p>" +
+		"<p>Your Guesses So Far: " + guessSoFar + "<p>";
+
+		document.querySelector('#starter').innerHTML = html;
+	
+	}
+		
+
+}
+
+
+
+
+</script>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,18 @@
+body{
+	background-image: url("../images/bg.jpg");
+}
+
+#psychic {
+	height: 300px;
+	text-align: center;
+}
+
+h1 {
+	color: #FF1493;
+	font-size: 30px;
+	text-align: center;
+}
+
+#starter {
+	font-size: 24px;
+}
